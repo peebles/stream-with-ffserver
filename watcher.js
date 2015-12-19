@@ -73,8 +73,13 @@ function startFFserver() {
     });
 }
 
-createConfigFile();
-startFFserver();
-watch( dir, { recursive: false, followSymLinks: false }, function( changed ) {
-    resetTimer();
-});
+// Give any containers running upstream enough time to create the
+// watch dir ...
+setTimeout( function() {
+    createConfigFile();
+    startFFserver();
+    watch( dir, { recursive: false, followSymLinks: false }, function( changed ) {
+	resetTimer();
+    });
+}, 30 * 1000 );
+
