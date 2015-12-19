@@ -1,0 +1,14 @@
+{
+    "seconds_to_settle_down": 60,
+    "header": [
+	"HTTPPort 8090",
+        "HTTPBindAddress 0.0.0.0",
+        "RTSPPort 554",
+        "MaxClients 1000",
+        "MaxBandwidth 1000"
+    ],
+    "additional_stream_directives": [
+	"PreRoll 5",
+        "NoLoop"
+    ]
+}
